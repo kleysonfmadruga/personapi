@@ -47,6 +47,13 @@ public class PersonService {
         repository.deleteById(id);
     }
 
+    public PersonDTO updatePerson(Long id, PersonDTO personDTO) throws PersonNotFoundException {
+        verifyIfExists(id);
+        Person personChanges = personMapper.toModel(personDTO);
+        Person updatedPerson = repository.save(personChanges);
+        return personMapper.toDTO(updatedPerson);
+    }
+
     private Person verifyIfExists(Long id) throws PersonNotFoundException {
         return repository
                 .findById(id)
