@@ -51,4 +51,14 @@ public class PersonController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
+
+    @DeleteMapping("/api/v1/persons/{id}")
+    public ResponseEntity<?> deletePerson(@PathVariable Long id){
+        try {
+            service.deletePerson(id);
+            return ResponseEntity.noContent().build();
+        } catch (PersonNotFoundException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
 }
