@@ -38,12 +38,20 @@ public class PersonService {
     }
 
     public PersonDTO getPersonById(Long id) throws PersonNotFoundException {
-        Person person = repository
+        Person person = verifyIfExists(id);
+        return personMapper.toDTO(person);
+    }
+
+    public void deletePerson(Long id) throws PersonNotFoundException{
+        verifyIfExists(id);
+        repository.deleteById(id);
+    }
+
+    private Person verifyIfExists(Long id) throws PersonNotFoundException {
+        return repository
                 .findById(id)
                 .orElseThrow(
-                    () -> new PersonNotFoundException("No persons were found with this ID")
+                        () -> new PersonNotFoundException("No persons were found with this ID")
                 );
-
-        return personMapper.toDTO(person);
     }
 }
