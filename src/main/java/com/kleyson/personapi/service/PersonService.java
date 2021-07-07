@@ -15,12 +15,12 @@ import java.util.stream.Collectors;
 @Service
 public class PersonService {
     private final PersonRepository repository;
-
-    private final PersonMapper personMapper = PersonMapper.INSTANCE;
+    private final PersonMapper personMapper;
 
     @Autowired
-    public PersonService(PersonRepository repository){
+    public PersonService(PersonRepository repository, PersonMapper personMapper){
         this.repository = repository;
+        this.personMapper = personMapper;
     }
 
     public PersonDTO createPerson(PersonDTO personDTO){
