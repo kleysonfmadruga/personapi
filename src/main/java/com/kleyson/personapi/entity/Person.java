@@ -25,7 +25,7 @@ public class Person {
     @Column(nullable = false, length = 80)
     private String lastName;
 
-    @Column(nullable = false, unique = true, length = 11)
+    @Column(nullable = false, unique = true, length = 14)
     private String cpf;
 
     @Column
