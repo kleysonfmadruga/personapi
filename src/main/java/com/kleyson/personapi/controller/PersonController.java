@@ -61,4 +61,14 @@ public class PersonController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
+
+    @PutMapping("/api/v1/persons/{id}")
+    public ResponseEntity<?> updatePerson(@PathVariable Long id, @RequestBody PersonDTO personDTO){
+        try {
+            PersonDTO updatedPerson = service.updatePerson(id, personDTO);
+            return ResponseEntity.ok(updatedPerson);
+        } catch (PersonNotFoundException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
 }
