@@ -4,7 +4,7 @@
 ![Last commit](https://img.shields.io/github/last-commit/kleysonfmadruga/personapi)
 
 ## Description
-A simple API to manage persons and departments in a company written in Java, using Spring Boot framework and H2 database. This project is also deployed in Heroku platform.
+A simple API to manage persons and departments in a company written in Java, using Spring Boot framework and H2 database. This project is also deployed on Heroku's platform.
 
 ## Running on your PC
 To run the project in your PC, you must, at first, install the dependencies and build the project executing the command ```mvn install```
