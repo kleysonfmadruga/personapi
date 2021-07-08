@@ -6,7 +6,7 @@
 ## Description
 A simple API to manage persons and departments in a company written in Java, using Spring Boot framework and H2 database. This project is also deployed in Heroku platform.
 
-## Running in your PC
+## Running on your PC
 To run the project in your PC, you must, at first, install the dependencies and build the project executing the command ```mvn install```
 Then run ```mvn spring-boot:run``` to start the Spring Boot application in the 8080 port.
 
