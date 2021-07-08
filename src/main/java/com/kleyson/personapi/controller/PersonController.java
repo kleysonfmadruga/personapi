@@ -1,7 +1,6 @@
 package com.kleyson.personapi.controller;
 
 import com.kleyson.personapi.dto.request.PersonDTO;
-import com.kleyson.personapi.entity.Person;
 import com.kleyson.personapi.exceptions.PersonNotFoundException;
 import com.kleyson.personapi.service.PersonService;
 
