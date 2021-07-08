@@ -5,6 +5,7 @@ import com.kleyson.personapi.entity.Person;
 import com.kleyson.personapi.exceptions.PersonNotFoundException;
 import com.kleyson.personapi.service.PersonService;
 
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +16,9 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class PersonController {
     private final PersonService service;
-
-    @Autowired
-    public PersonController(PersonService service){
-        this.service = service;
-    }
 
     @PostMapping("/api/v1/persons")
     public ResponseEntity<?> createPerson(@RequestBody @Valid PersonDTO personDTO){
